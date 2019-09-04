@@ -1,29 +1,38 @@
 package ch.deletescape.lawnchair.launcherclient;
 
+import android.os.Bundle;
 import ch.deletescape.lawnchair.launcherclient.WindowLayoutParams;
 import ch.deletescape.lawnchair.launcherclient.ILauncherClientProxyCallback;
-import android.view.WindowManager.LayoutParams;
-import com.google.android.libraries.launcherclient.ILauncherOverlayCallback;
 
 interface ILauncherClientProxy {
 
-    oneway void startScroll();
+    void closeOverlay(int options);
 
-    oneway void onScroll(in float progress);
+    void endScroll();
 
-    oneway void endScroll();
+    void onPause();
 
-    oneway void windowAttached(in WindowLayoutParams lp, in int flags);
+    void onResume();
 
-    oneway void windowDetached(in boolean isChangingConfigurations);
+    void onScroll(float progress);
 
-    oneway void closeOverlay(in int flags);
+    void openOverlay(int options);
 
-    oneway void onPause();
+    void startScroll();
 
-    oneway void onResume();
+    void windowAttached(inout WindowLayoutParams attrs, int options);
 
-    oneway void openOverlay(in int flags);
+    void windowAttached2(inout Bundle bundle);
+
+    void setActivityState(int activityState);
+
+    void windowDetached(boolean isChangingConfigurations);
+
+    void onQsbClick(inout Intent intent);
+
+    int init(ILauncherClientProxyCallback callback);
+
+    int reconnect();
 
     oneway void requestVoiceDetection(in boolean start);
 
@@ -33,15 +42,5 @@ interface ILauncherClientProxy {
 
     boolean hasOverlayContent();
 
-    oneway void windowAttached2(in Bundle bundle);
-
-    oneway void setActivityState(in int flags);
-
     boolean startSearch(in byte[] data, in Bundle bundle);
-
-    void onQsbClick(inout Intent intent);
-
-    int init(ILauncherClientProxyCallback callback);
-
-    int reconnect();
 }
