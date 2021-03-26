@@ -1,4 +1,4 @@
-package ch.deletescape.lawnchair.launcherclient;
+package app.lawnchair.launcherclient;
 
 interface ILauncherClientProxyCallback {
 

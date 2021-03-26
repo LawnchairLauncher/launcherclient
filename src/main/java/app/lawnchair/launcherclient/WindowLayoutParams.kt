@@ -1,4 +1,4 @@
-package ch.deletescape.lawnchair.launcherclient
+package app.lawnchair.launcherclient
 
 import android.os.Parcel
 import android.os.Parcelable

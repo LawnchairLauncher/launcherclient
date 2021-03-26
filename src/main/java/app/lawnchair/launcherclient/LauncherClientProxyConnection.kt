@@ -1,10 +1,10 @@
-package ch.deletescape.lawnchair.launcherclient
+package app.lawnchair.launcherclient
 
 import android.content.Context
 
 class LauncherClientProxyConnection(
         private val context: Context,
-        private val proxyPackage: String = "ch.deletescape.lawnchair.launcherclientproxy",
+        private val proxyPackage: String = "app.lawnchair.launcherclientproxy",
         private val overlayEnabled: Boolean) {
 
 
